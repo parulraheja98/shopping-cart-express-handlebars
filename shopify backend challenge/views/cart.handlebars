@@ -1,0 +1,48 @@
+<script>
+    if(!!window.performance && window.performance.navigation.type == 2)
+    {
+        window.location.reload();
+    }
+    console.log("Checking" + "{{cartitems}}");
+    function d(evt) {
+        console.log("Cheking"+evt);
+        window.location.href="/updatingcheck";
+    }
+    function passEvent(evt) {
+        evt.preventDefault();
+        window.location.href="/checkout";
+    }
+    function checkoutdis() {
+        var checkoutbtn = document.getElementById('checkout');
+        checkoutbtn.setAttribute('disabled','disabled');
+    }
+</script>
+<a href="cart/clear" id="clrcart"> Clear Cart</a>
+<a href="/fetchproducts" style="margin-left:20px;"> Click here to add more products</a>
+<form method="POST" action="/updatecart">
+    <table>
+        <tr>
+            <td> title </td>
+            <td> price </td>
+            <td> quantity</td>
+        </tr>
+{{#each cartitems}}
+    <tr>
+    <tr>
+    <td> {{title}} </td>
+    <td>  {{price}} </td>
+    <td> <input type="text" name="{{title}}" value="{{quantity}}" onkeyup="checkoutdis()"> </td>
+    </tr>
+{{/each}}
+    </table>
+    <div id="footer">
+Total Price is {{total_price}} <br>
+<button type="submit"> Update Cart </button>
+{{#if checkout }}
+<button type="button" onclick="passEvent(event)" id="checkout"> Checkout</button>
+{{else}}
+Sorry you have one of the products with lesser inventory so you cannot checkout
+{{/if}}
+    </div>
+</form>
+

@@ -1,0 +1,29 @@
+<script>
+    if(!!window.performance && window.performance.navigation.type == 2)
+    {
+        window.location.reload();
+    }
+
+</script>
+
+
+<table class="checkout">
+    <tr>
+        <td> title </td>
+        <td> price </td>
+        <td> quantity</td>
+    </tr>
+{{#each checkoutitem}}
+<tr>
+        <td> {{title}} </td>
+        <td>  {{price}} </td>
+        <td>  {{quantity}} </td>
+</tr>
+
+{{/each}}
+</table>
+<div id="footer">
+Total Price is {{total_price}} <br>
+
+<a href="/fetchproducts"> Click here to go back to the products page </a>
+</div>

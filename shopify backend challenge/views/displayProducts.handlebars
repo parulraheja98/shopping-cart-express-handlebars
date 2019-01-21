@@ -1,0 +1,40 @@
+<script>
+    if(!!window.performance && window.performance.navigation.type == 2)
+    {
+        window.location.reload();
+    }
+
+</script>
+<ul id="displayProducts">
+    <li class="navlist">  <a href="/createcustomproducts"> Create Custom Products </a>  </li>
+    <li class="navlist">  <a href="/deletecustomproducts"> Delete Custom products</a>  </li>
+    <li class="navlist">  <a href="/cart/clear"> Clear Cart</a>   </li>
+    <li class="navlist">  <a href="/cart"> Cart </a></li>
+</ul>
+
+<table>
+    <tr>
+        <td> title </td>
+        <td> price </td>
+        <td> Inventory</td>
+        <td>  Cart </td>
+    </tr>
+{{#each productsForDisplay}}
+    {{#if inventory_count}}
+    <tr class="prdctDisplay">
+        <td class="titleEdit">{{title}} </td> <br>
+        <td>   {{price}}   </td>
+        <td> {{inventory_count}} </td>
+        <td> <a href="/cart/add/{{id}}"> Add To Cart </a> </td>
+    </tr>
+    {{else}}
+        <tr class="prdctDisplay">
+            <td class="titleEdit">     {{title}} </td><br>
+            <td>Price {{price}}  </td>
+            <td>  {{inventory_count}} </td>
+            <td>This product is out of inventory <br> </td>
+        </tr>
+
+    {{/if}}
+{{/each}}
+</table>
