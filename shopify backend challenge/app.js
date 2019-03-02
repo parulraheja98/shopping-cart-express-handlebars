@@ -1,7 +1,7 @@
 var express = require('express'),
     handlebars = require('express-handlebars').create({defaultLayout: 'main'});
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/d45');
+mongoose.connect('mongodb://mongo:27017/newdock');
 
 var app = express();
 var credentials = require('./credentials.js');
