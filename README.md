@@ -1,4 +1,4 @@
-# shopifydevchallenge
+# shopping cart 
 
 Technologies Used :- Node JS for Backend , MongoDB for Database
 
