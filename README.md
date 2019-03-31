@@ -7,9 +7,11 @@ Technologies Used :- Node JS for Backend , MongoDB for Database
 
 git clone repo https://github.com/parulraheja98/shopifydevchallenge.git
 
-First connect to the mongo server by running mongod.exe
+open your terminal run commands :-
 
-After than run node app.js referencing the project directory that you cloned from repo
+docker-compose build
+
+docker-compose up 
 
 The project should be live on localhost:3017
 
