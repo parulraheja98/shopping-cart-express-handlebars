@@ -19,7 +19,7 @@
     "express-rate-limit": "^3.3.2",
     "md5": "2.2.1",
     "mocha-http": "^0.2.5",
-    "mongoose": "^5.0.12"
+    "mongoose": "^5.7.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
